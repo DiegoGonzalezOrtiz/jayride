@@ -1,0 +1,29 @@
+<div class="quotes" *ngIf="listings">
+  <table class="table table-striped" >
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Vehicle Type
+      </th>
+      <th>
+        Price per Passenger
+      </th>
+    </tr>
+  <tbody>
+    <tr *ngFor="let item of listings">
+      <td>{{item.name}}</td>
+      <td>{{item.vehicleType.name}}</td>
+      <td>{{item.pricePerPassenger}}</td>
+    </tr>
+  </tbody>
+  </table>
+
+
+<p>Total number of listings {{listings.length}}</p>
+<p>Minimum Price {{listings[0].pricePerPassenger}}</p>
+<p>Maximum Price {{listings[listings.length-1].pricePerPassenger}}</p>
+<p>Average Price {{averagePrice}}</p>
+</div>
+

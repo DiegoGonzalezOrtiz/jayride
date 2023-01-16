@@ -1,0 +1,27 @@
+.date{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+
+}
+.lblTitle {
+  color: white;
+}
+.form-switch{
+text-align: left;
+}
+.picker {
+  text-align: left;
+  margin: 16px 0;
+}
+h1{
+  color: white;
+}
+.submit{
+  display: flex;
+  justify-content: space-between;
+  button {
+    height: 37px;
+  }
+  margin-bottom: 16px;
+}

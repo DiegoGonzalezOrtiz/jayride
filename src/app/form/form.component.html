@@ -1,0 +1,70 @@
+
+<div class="container text-center">
+  <h1>Traveler</h1>
+
+      <form [formGroup]="travelerForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="Name"  formControlName="name" required
+          [class.is-invalid]="travelerForm.get('name')?.invalid && travelerForm.get('name')?.touched">
+          <label for="floatingInput">Name</label>
+          <div class="invalid-feedback">
+            Please insert name
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="example@gmail.com" formControlName="email"
+          [class.is-invalid]="travelerForm.get('email')?.invalid && travelerForm.get('email')?.touched">
+          <label for="floatingInput">Email</label>
+          <div class="invalid-feedback">
+            Please email
+          </div>
+        </div>
+
+        <select  id="chanel" formControlName="chanel" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+        [class.is-invalid]="travelerForm.get('chanel')?.invalid && travelerForm.get('chanel')?.touched">>
+          <option selected="Chanel" disabled>Chanel</option>
+          <option value="partner">partner</option>
+          <option value="agent">agent</option>
+          <option value="direct customer">direct customer</option>
+        </select>
+        <div class="form-check form-switch">
+          <label class="form-check-label lblTitle" for="meetAndGreet">Meet & Greet</label>
+          <input class="form-check-input"  formControlName="meetAndGreet" type="checkbox" role="switch" id="meetAndGreet">
+        </div>
+        <div class="picker">
+          <label class="lblTitle">Date And time</label>
+          <div class="date">
+            <ngb-datepicker formControlName="date">
+          </ngb-datepicker>
+
+            <ngb-timepicker formControlName="time"></ngb-timepicker>
+          </div>
+        </div>
+
+
+        <div class="form-floating mb-3">
+          <input class="form-control" id="floatingInput" placeholder="bookingPrice" formControlName="bookingPrice" restrictInput
+          [class.is-invalid]="travelerForm.get('bookingPrice')?.invalid && travelerForm.get('bookingPrice')?.touched">
+          <label for="floatingInput">Booking Price</label>
+          <div class="invalid-feedback">
+            Please insert booking price
+          </div>
+        </div>
+        <div class="submit">
+          <button type="submit" class="btn btn-primary" >
+            Save
+          </button>
+
+          <div *ngIf="error" class="alert alert-danger d-flex align-items-center" role="alert">
+            <div>
+              * Please complete all the information.
+            </div>
+          </div>
+        </div>
+
+
+      </form>
+</div>
+
+

@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+    "target": "https://jayridechallengeapi.azurewebsites.net/api/QuoteRequest",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}
